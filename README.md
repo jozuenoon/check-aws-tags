@@ -3,7 +3,7 @@ Add following hook to cluster definition:
   hooks:
   - manifest: |
       Type=oneshot                    
-      ExecStart=/usr/bin/docker run --net host jozuenoon/check-aws-tags
+      ExecStart=/usr/bin/docker run --net host --restart no jozuenoon/check-aws-tags
       ExecStartPost=/bin/systemctl restart kubelet.service
     name: ensure-aws-tags.service
     requires:
@@ -17,3 +17,4 @@ The file should be placed under path `/lib/systemd/system/ensure-aws-tags.servic
 Reference:
 
 [1] - https://github.com/kubernetes/kops/issues/3605
+[2] - https://github.com/kubernetes/kubernetes/issues/64507
