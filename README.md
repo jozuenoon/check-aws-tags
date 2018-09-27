@@ -17,4 +17,5 @@ The file should be placed under path `/lib/systemd/system/ensure-aws-tags.servic
 Reference:
 
 [1] - https://github.com/kubernetes/kops/issues/3605
+
 [2] - https://github.com/kubernetes/kubernetes/issues/64507
